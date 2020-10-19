@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(upload.array());
 app.use(cookieParser());
-app.use(session({secret: "Your secret key"}));
+app.use(session({secret: "Yaqwzsaq454%é2"}));
 
 var Users = [];
 
