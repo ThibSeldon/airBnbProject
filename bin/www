@@ -36,7 +36,7 @@ server.on('listening', onListening);
 console.log('******************************************');
  console.log("Le serveur ecoute sur le port : " + port);
  console.log('******************************************');
-console.log(process.env.PORT);
+
 /**
  * Normalize a port into a number, string, or false.
  */
