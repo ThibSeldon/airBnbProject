@@ -13,9 +13,9 @@ router.get('/', function(req, res, next){
     res.json({message : 'Hello World'});
 
     client.connect(err => {
-        if(err) return console.error(err)
+        //if(err) return console.error(err)
         const collection = client.db("Rbnb").collection("quotes");
-        collection.insertOne({name:"Thib2", quote: "Dont be afraid to fail "})
+        collection.insertOne({name:"Thib3", quote: "Dont be afraid to fail "})
         client.close();
       });
 
