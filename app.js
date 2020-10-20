@@ -3,16 +3,33 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const MongoClient = require('mongodb').MongoClient;
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const uri = "mongodb+srv://thib_seldon:"+ process.env.MONGOPSW + "@cluster0.l69fw.mongodb.net/test?retryWrites=true&w=majority";
+
+
+
+MongoClient.connect(uri, {
+  useUnifiedTopology: true
+}, (err, client) => {
+  if (err) return console.error(err)
+  console.log('Connected to Database')
+  const db = client.db('Rbnb')
+  const qCollection = db.collection('quotes')
+  //qCollection.insertOne({nom:"DarkVador", quote: "Je suis ton pere"})
+})
+
+
+//var usersRouter = require('./routes/users');
 var apiRouter = require('./routes/api');
 
 var app = express();
 
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+//app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(express.json());
