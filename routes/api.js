@@ -12,18 +12,19 @@ router.get('/', function(req, res, next){
     res.status(200);
     res.json({message : 'Hello World'});
 
-    client.connect(err => {
-        //if(err) return console.error(err)
-        const collection = client.db("Rbnb").collection("quotes");
-        collection.insertOne({name:"Thib3", quote: "Dont be afraid to fail "})
-        client.close();
-      });
-
 })
 
 
 router.post('/signup', function(req,res,next){
-    
+  client.connect(err => {
+    //if(err) return console.error(err)
+    const collection = client.db("Rbnb").collection("quotes");
+    collection.insertOne(req.body)
+    .then(result => {
+      console.log(result)
+    })
+    client.close();
+  });
 })
 
 
