@@ -3,7 +3,7 @@
 /**
  * Module dependencies.
  */
-
+require('dotenv').config();
 var app = require('../app');
 var debug = require('debug')('express-myapp:server');
 var http = require('http');
@@ -29,6 +29,14 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
+/**
+ * 
+ * Renvoi le port sur lequel écoute le serveur dans la console
+ */
+console.log('******************************************');
+ console.log("Le serveur ecoute sur le port : " + port);
+ console.log('******************************************');
+console.log(process.env.PORT);
 /**
  * Normalize a port into a number, string, or false.
  */
