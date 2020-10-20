@@ -3,21 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const MongoClient = require('mongodb').MongoClient;
-
-const uri = "mongodb+srv://thib_seldon:"+ process.env.MONGOPSW + "@cluster0.l69fw.mongodb.net/test?retryWrites=true&w=majority";
-
-
-
-MongoClient.connect(uri, {
-  useUnifiedTopology: true
-}, (err, client) => {
-  if (err) return console.error(err)
-  console.log('Connected to Database')
-  const db = client.db('Rbnb')
-  const qCollection = db.collection('quotes')
-  //qCollection.insertOne({nom:"DarkVador", quote: "Je suis ton pere"})
-})
+require('./database')
 
 
 //var usersRouter = require('./routes/users');
