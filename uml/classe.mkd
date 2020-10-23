@@ -1,0 +1,35 @@
+@startuml
+' class User {
+' #id
+' +mail  
+' +password 
+' +first_name 
+' +last_name 
+' +role
+' } 
+' class City { 
+' +name
+' }
+
+' class Place {
+' +city 
+' User => User 
+' +name 
+' +description 
+' +rooms 
+' +bathrooms 
+' +max_guest 
+' +price_by_night 
+' +available
+' } 
+
+' class Booking {
+' +place 
+' +user 
+' +check_in 
+' +check_out
+' }  
+Employe (#Num, Nom, Prenom, Age, Salaire, Fonction=>Fonction, Societe=>Societe)
+Fonction (#Intitule, SalaireMin, SalaireMax, NbHeures)
+Societe (#Nom, Pays, Activite)
+@enduml
